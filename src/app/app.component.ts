@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
 })
 export class AppComponent {
   message: string = null;
+  error: boolean = false;
   
   constructor(private http: Http) {
   }
@@ -17,9 +18,11 @@ export class AppComponent {
   checkInfo() {
     this.http.get('/info').map(response => response.json()).subscribe(info => {
         this.message = info.message;
+        this.error = false;
       }, 
       error => {
-        this.message = '(Keine Verbindung!)';
+        this.error = true;
+        this.message = 'ERROR';
       } 
     );
   }
