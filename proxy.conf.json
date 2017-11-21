@@ -1,8 +1,0 @@
-{
-  "/info": {
-    "target": "http://localhost:8000",
-    "secure": false,
-    "changeOrigin": false,
-    "logLevel": "debug"
-  }
-}
